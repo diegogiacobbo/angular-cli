@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'front-angular-cli';
+
+  constructor() {}
+
+  opened = true;
+
+  ngOnInit() {
+    console.log(window.innerWidth)
+    if (window.innerWidth < 768) {
+      this.opened = false;
+    } else {
+      this.opened = true;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (event.target.innerWidth < 768) {
+      this.opened = false;
+    } else {
+      this.opened = true;
+    }
+  }
+ 
+  isBiggerScreen() {
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (width < 768) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
