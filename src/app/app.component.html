@@ -1,23 +1,19 @@
-<header></header>
+<header>
+</header>
 <main>
-
+  <!-- ROUTER-OUTLET -->  
   <router-outlet></router-outlet>
-
   <!-- Toolbar -->
-  
   <mat-toolbar color="primary" class="header">
     Material Theme  
     <span class="nav-tool-items">
-
-      <!--mat-animated-icon (click)="sidenav.toggle()" start="menu" end="close" colorStart="none" colorEnd="none" [animate]="animate"></mat-animated-icon -->
-      
-      <mat-icon (click)="sidenav.toggle()" class="">menu</mat-icon>
+      <mat-animated-icon (click)="sidenav.toggle()" start="menu" end="close" colorStart="none" colorEnd="red" [animate]="opened"></mat-animated-icon>
     </span>
   </mat-toolbar>
 
   <mat-sidenav-container>
     <!-- Sidenav -->
-    <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+    <mat-sidenav #sidenav [(opened)]="opened" [fixedInViewport]="true"
       [fixedTopGap]>
       <mat-nav-list>
         <a mat-list-item>

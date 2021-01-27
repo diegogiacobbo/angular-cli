@@ -31,3 +31,5 @@ mat-icon {
     @include md-icon-size(32px);
     cursor: pointer;
 }
+
+.mat-drawer-container, .mat-drawer-content { display: block; height: 100vh; }

@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as component menu opened`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.opened).toBeTrue();
+    expect(app.opened).toBeFalse();
   });
 
 });
