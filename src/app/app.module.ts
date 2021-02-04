@@ -1,25 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AngularMaterialModule } from './angular-material/angular-material.module';
-import { MatAnimatedIconComponent } from './mat-animated-icon/mat-animated-icon.component';
+import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
+import { GithubComponent } from './github/github.component';
+import { GithubService } from './github/github.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MatAnimatedIconComponent
+    MenuComponent,
+    GithubComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule
   ],
-  providers: [],
+  providers: [GithubService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

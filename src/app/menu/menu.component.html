@@ -1,0 +1,19 @@
+<div id="top-nav">
+  <h1>MenuComponent Test</h1>
+  <div #navmenu class="nav-menu">
+        <div #menulist class="menu-list">
+          <ul>
+            <li><a routerLink="/">home</a></li>
+            <li><a routerLink="/github">github</a></li>
+            <li><a routerLink="/contact">contact</a></li>
+            <div class="social-icons"><a><i class="fa fa-facebook"></i></a><a><i class="fa fa-twitter"></i></a><a><i class="fa fa-instagram"></i></a></div>
+          </ul>
+        </div>
+        <div id="burger-wrap">
+          <a class="burger" [ngClass]="{'animate' : animate}" (click)="toggle()"><span></span></a>
+        </div>
+    </div>
+</div>
+
+
+

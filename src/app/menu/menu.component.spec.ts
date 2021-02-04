@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MenuComponent } from './menu.component';
 
-import { MatAnimatedIconComponent } from './mat-animated-icon.component';
-
-describe('MatAnimatedIconComponent', () => {
-  let component: MatAnimatedIconComponent;
-  let fixture: ComponentFixture<MatAnimatedIconComponent>;
+describe('MenuComponent', () => {
+  let component: MenuComponent;
+  let fixture: ComponentFixture<MenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MatAnimatedIconComponent ]
+      declarations: [ MenuComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MatAnimatedIconComponent);
+    fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

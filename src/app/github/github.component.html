@@ -1,0 +1,5 @@
+
+<div *ngFor="let gitproject of projets$ | async">
+  {{ gitproject.language }} : {{ gitproject.name }}
+</div>
+
