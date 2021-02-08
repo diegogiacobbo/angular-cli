@@ -1,5 +1,5 @@
-
-<div *ngFor="let gitproject of projets$ | async">
-  {{ gitproject.language }} : {{ gitproject.name }}
+<div id="github">
+  <div *ngFor="let gitproject of projets$ | async">
+    {{ gitproject.language }} : {{ gitproject.name }}
+  </div>
 </div>
-

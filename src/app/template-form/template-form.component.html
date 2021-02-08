@@ -1,0 +1,53 @@
+<div id="formulaire">
+  <h1>Hero Form</h1>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <!-- NOME-->
+    <div class="form-group" [class.has-error]="!nome.valid && nome.touched"
+      [class.has-feedback]="!nome.valid && nome.touched">
+
+      <label for="nome" class="control-label">Nome</label>
+
+      <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome" [(ngModel)]="usuario.nome"
+        [ngModelOptions]="{standalone: false}" required #nome="ngModel">
+
+      <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"
+        *ngIf="!nome.valid && nome.touched"></span>
+
+      <span id="nome" class="sr-only" *ngIf="!nome.valid && nome.touched"></span>
+
+      <div *ngIf="!nome.valid && nome.touched" class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+      </div>
+
+    </div>
+
+    <!-- EMAIL-->
+    <div class="form-group" [class.has-error]="!email.valid && email.touched"
+    [class.has-feedback]="!email.valid && email.touched">
+
+      <label for="email" class="control-label">Email</label>
+
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"
+        [(ngModel)]="usuario.email" [ngModelOptions]="{standalone: false}" required #email="ngModel"
+        pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+
+      <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"
+        *ngIf="!email.valid && email.touched"></span>
+
+      <span id="email" class="sr-only" *ngIf="!email.valid && email.touched"></span>
+
+      <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+      </div>
+
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!f.form.valid">Submit</button>
+
+    <app-form-debug [form]="f"></app-form-debug>
+
+  </form>
+</div>
